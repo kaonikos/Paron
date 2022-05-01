@@ -1,0 +1,29 @@
+.appBar {
+    display: flex;
+    flex-direction: row;
+    /*position: absolute;*/
+    /*top: 0;*/
+    width: 100%;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.divider {
+    display: flex;
+    height: 100%;
+    width: 1px;
+    background-color: #31195b;
+}
+
+.text {
+    color: #31195b;
+}

@@ -1,0 +1,38 @@
+.report {
+    display: flex;
+    justify-content: flex-start;
+    /*align-items: center;*/
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.title {
+    font-size: 24px;
+    color: #31195b;
+    font-weight: bold;
+}
+
+.information {
+    font-size: 16px;
+    color: #31195b;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+}
+
+.image {
+    height: 200px;
+    width: 200px;
+}
