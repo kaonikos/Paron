@@ -1,0 +1,38 @@
+.login-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-screen .login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(143, 143, 143, 0.37);
+    backdrop-filter: blur( 1.5px );
+    border-radius: 4px;
+    border: 1px solid rgba(208, 208, 208, 0.42);
+}
+
+.login-screen .login-card .header h4{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+    padding: 16px;
+}
+
+.login-screen .login-card .fields {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}

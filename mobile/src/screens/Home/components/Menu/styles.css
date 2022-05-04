@@ -1,0 +1,78 @@
+.home .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    top: -15%;
+    left: auto;
+
+    transition: all 0.3s ease;
+}
+.home .menu:focus {
+    top: 0;
+    left: auto;
+}
+.home .menu .background{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+
+    background: rgba(0, 0, 0, 0.62);
+    backdrop-filter: blur( 1.5px );
+
+
+}
+
+.home .menu .background p {
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.home .menu .background .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.home .menu .background .profile p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.home .menu .hex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: -50px;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+
+    background: rgba(192, 192, 192, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(143, 143, 143, 0.37);
+    backdrop-filter: blur( 1.5px );
+    border-radius: 4px;
+    /*border: 1px solid rgba(208, 208, 208, 0.42);*/
+
+    transition: all 0.3s ease;
+}
+
+.home .menu:focus .hex {
+    bottom: -25px;
+}
+
+.home .menu svg{
+    transition: all 0.3s ease;
+}
+.home .menu:focus svg#arrow {
+    transform: rotate(180deg);
+}

@@ -1,0 +1,52 @@
+.home .report-issue {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.home .report-issue .header {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+}
+.home .report-issue .header p {
+    margin: 0;
+}
+.home .report-issue .header h2 {
+    margin: 0;
+}
+.home .report-issue .camera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.home .report-issue .camera img{
+    height: 100px;
+}
+.home .report-issue .camera svg {
+    font-size: 32px;
+}
+
+.p-dialog {
+    width: 90% !important;
+}
+.p-dialog img {
+    width: 100%;
+}
+
+.image-preview .p-dialog-header {
+    display: none !important;
+}
+.image-preview .p-dialog-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+}
