@@ -3,6 +3,9 @@ import {Actions} from './actions'
 const initState = {
     displayedScreen: 'splashscreen',
     tab: 'options',
+    toggleMenu: false,
+    language: {},
+    darkMode: false,
 }
 
 const reducer = (currentState = initState, action) => {
@@ -16,6 +19,21 @@ const reducer = (currentState = initState, action) => {
             return{
                 ...currentState,
                 tab: action.payload
+            }
+        case Actions.SetToggleMenu:
+            return{
+                ...currentState,
+                toggleMenu: action.payload
+            }
+        case Actions.SetLanguage:
+            return {
+                ...currentState,
+                language: action.payload
+            }
+        case Actions.SetDarkMode:
+            return {
+                ...currentState,
+                darkMode: action.payload
             }
         default: return currentState
     }

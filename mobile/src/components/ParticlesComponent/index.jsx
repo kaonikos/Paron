@@ -1,18 +1,16 @@
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import particlesConfiguration from "./particlesConfiguration";
+import particlesBlackConfiguration from "./particlesBlackConfiguration";
+import particlesWhiteConfiguration from './particlesWhiteCofiguration'
 import {useSelector} from "react-redux";
 
 const ParticlesComponent = () => {
 
     const displayedScreen = useSelector((state) => state.displayedScreen)
+    const darkMode = useSelector((state) => state.darkMode)
 
     const particlesInit = async (main) => {
         console.log(main);
-
-        // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
         await loadFull(main);
     };
 
@@ -27,7 +25,7 @@ const ParticlesComponent = () => {
                 id="tsparticles"
                 init={particlesInit}
                 loaded={particlesLoaded}
-                options={particlesConfiguration}
+                options={darkMode ? particlesWhiteConfiguration : particlesBlackConfiguration}
             />}
         </div>
     );

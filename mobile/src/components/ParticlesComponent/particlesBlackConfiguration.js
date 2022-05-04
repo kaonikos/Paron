@@ -1,4 +1,4 @@
-const particlesConfiguration = {
+const particlesBlackConfiguration = {
     "particles": {
         "number": {
             "value": 30,
@@ -109,4 +109,4 @@ const particlesConfiguration = {
     "retina_detect": true
 }
 
-export default particlesConfiguration
+export default particlesBlackConfiguration

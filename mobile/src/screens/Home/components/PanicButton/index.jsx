@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Actions} from "../../../../reducer/actions";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +12,8 @@ import {Dialog} from "primereact/dialog";
 const PanicButton = () => {
 
     const dispatch = useDispatch();
+
+    const language = useSelector((state) => state.language)
 
     const setTab = (payload) => dispatch({ type: Actions.SetTab, payload });
 
@@ -33,11 +35,11 @@ const PanicButton = () => {
         <div className='panic-button'>
             <FontAwesomeIcon id='back-button' icon={faArrowLeft} onClick={() => setTab('options')}/>
             <div className="p-ripple" onClick={() => sendSignal()} >
-                <p>Panic button</p>
+                <p id='mode'>{language.PanicButtonTitle}</p>
                 <Ripple />
             </div>
             <Dialog  header="Success" visible={confirmationDialog} style={{ width: '50vw' }} onHide={() => setConfirmationDialog(false)}>
-                <p>Your location was sent successfully</p>
+                <p id='mode'>{language.PanicButtonSuccessMessage}</p>
             </Dialog>
         </div>
     )

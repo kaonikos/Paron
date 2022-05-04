@@ -10,10 +10,7 @@
 
     transition: all 0.3s ease;
 }
-.home .menu:focus {
-    top: 0;
-    left: auto;
-}
+
 .home .menu .background{
     display: flex;
     flex-direction: row;
@@ -35,14 +32,14 @@
     font-weight: 200;
 }
 
-.home .menu .background .profile {
+.home .menu .background .profile-button {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 16px;
 }
-.home .menu .background .profile p {
+.home .menu .background .profile-button p {
     font-size: 16px;
     font-weight: 400;
 }
@@ -66,13 +63,18 @@
     transition: all 0.3s ease;
 }
 
-.home .menu:focus .hex {
-    bottom: -25px;
-}
-
 .home .menu svg{
     transition: all 0.3s ease;
 }
-.home .menu:focus svg#arrow {
+
+.home #menu-toggled.menu {
+    top: 0;
+    left: auto;
+}
+.home #menu-toggled.menu .hex {
+    bottom: -25px;
+}
+
+.home #menu-toggled.menu svg#arrow {
     transform: rotate(180deg);
 }

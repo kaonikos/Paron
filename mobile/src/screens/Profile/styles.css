@@ -1,0 +1,42 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+.profile .settings {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 32px;
+}
+
+.profile svg#back-button {
+    bottom: 25px;
+}
+
+.profile svg#user-icon{
+    margin-top: 32px;
+    font-size: 36px;
+}
+
+.profile .information-container {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 90%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(143, 143, 143, 0.37);
+    backdrop-filter: blur( 2.5px );
+    border-radius: 4px;
+    border: 1px solid rgba(208, 208, 208, 0.42);
+}
+

@@ -1,0 +1,48 @@
+div#mode {
+    background-color: #494949;
+}
+
+p#mode {
+    color: white;
+}
+
+h1#mode {
+    color: white;
+}
+h2#mode{
+    color: white;
+}
+h3#mode{
+    color: white;
+}
+h4#mode{
+    color: white;
+}
+h5#mode{
+    color: white;
+}
+
+.p-dropdown-panel {
+    background-color: #494949 !important;
+    color: white !important;
+}
+
+svg#back-button {
+    color: white;
+}
+
+svg {
+    color: white;
+}
+
+.p-tabview-nav {
+    background: #494949 !important;
+}
+.p-tabview-nav-link {
+     background: #494949 !important;
+     background-color: #494949 !important;
+ }
+
+.p-tabview-title {
+    color: white;
+}
