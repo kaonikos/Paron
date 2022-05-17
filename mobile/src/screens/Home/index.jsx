@@ -1,5 +1,5 @@
 import React from 'react'
-import {Menu,Footer,Options,PanicButton,ReportIssue} from './components'
+import {Menu,Footer,Options,PanicButton,ReportIssue,Carpooling} from './components'
 import './styles.css'
 import {useSelector} from "react-redux";
 
@@ -12,6 +12,7 @@ const Home = () => {
             case 'options': return <Options/>
             case 'panic button': return <PanicButton/>
             case 'report issue': return <ReportIssue/>
+            case 'carpooling': return <Carpooling/>
             default : return <Options/>
         }
     }

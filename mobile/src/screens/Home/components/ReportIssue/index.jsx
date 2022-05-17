@@ -60,15 +60,14 @@ const ReportIssue = () => {
                 {imageUrl !== '' ? <img src={imageUrl} alt='photo' onClick={() => setImageDialog(true)} /> : <></>}
             </div>
             <span className="p-float-label">
-                        <InputText id="description" value={text} onChange={(e) => setText(e.target.value)} />
-                        <label htmlFor="username">{language.ReportIssueInputLabel}</label>
+                        <InputText id="description" value={text} onChange={(e) => setText(e.target.value)} placeholder={language.ReportIssueInputLabel}/>
                     </span>
             <Button label={language.ReportIssueButtonLabel} onClick={() => getLocation()}/>
             <Dialog className='image-preview' header="Preview" visible={imageDialog} style={{ width: '50vw' }} onHide={() => setImageDialog(false)} dismissableMask>
-                <img src={imageUrl} alt='photo' />
+                <img src={imageUrl} alt='photo'/>
             </Dialog>
             <Dialog  header="Success" visible={confirmationDialog} style={{ width: '50vw' }} onHide={() => setConfirmationDialog(false)}>
-                <p id='mode'>{language.ReportIssueSuccessMessage}</p>
+                <p>{language.ReportIssueSuccessMessage}</p>
             </Dialog>
         </div>
     )

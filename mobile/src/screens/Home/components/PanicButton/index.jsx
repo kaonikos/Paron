@@ -35,11 +35,11 @@ const PanicButton = () => {
         <div className='panic-button'>
             <FontAwesomeIcon id='back-button' icon={faArrowLeft} onClick={() => setTab('options')}/>
             <div className="p-ripple" onClick={() => sendSignal()} >
-                <p id='mode'>{language.PanicButtonTitle}</p>
+                <p>{language.PanicButtonTitle}</p>
                 <Ripple />
             </div>
             <Dialog  header="Success" visible={confirmationDialog} style={{ width: '50vw' }} onHide={() => setConfirmationDialog(false)}>
-                <p id='mode'>{language.PanicButtonSuccessMessage}</p>
+                <p>{language.PanicButtonSuccessMessage}</p>
             </Dialog>
         </div>
     )

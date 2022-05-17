@@ -30,7 +30,7 @@ const Options = () => {
                 <FontAwesomeIcon icon={faCamera}/>
             </div>
             <div className='hexagon' tabindex="0" >
-                <div className='header'>
+                <div className='header' onClick={() => setTab('carpooling')}>
                     <h3 id='mode'>{language.HomeOptionsCarpoolingTitle}</h3>
                     <p id='mode'>{language.HomeOptionsCarpoolingDescription}</p>
                 </div>
