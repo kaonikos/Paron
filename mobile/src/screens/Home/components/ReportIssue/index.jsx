@@ -9,7 +9,7 @@ import { InputText } from 'primereact/inputtext';
 import { Dialog } from 'primereact/dialog';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { Geolocation } from '@capacitor/geolocation';
-import ReportingService from '../../../../httpService/reportingService'
+import ReportingService from '../../../../services/httpService/reportingService'
 
 const ReportIssue = () => {
 

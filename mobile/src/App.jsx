@@ -7,6 +7,8 @@ import Profile from './screens/Profile'
 import ParticlesComponent from "./components/ParticlesComponent";
 import {L} from './utils/localization'
 
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import './App.css';

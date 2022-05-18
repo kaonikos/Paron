@@ -3,6 +3,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {Actions} from "../../../../reducer/actions";
 import {useDispatch} from "react-redux";
+import Map from '../../../../components/Map'
+import './styles.css'
 
 const Carpooling = () => {
 
@@ -13,6 +15,7 @@ const Carpooling = () => {
     return (
         <div className='carpooling'>
             <FontAwesomeIcon id='back-button' icon={faArrowLeft} onClick={() => setTab('options')}/>
+            <Map/>
         </div>
     )
 }

@@ -6,7 +6,7 @@ import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import { Ripple } from 'primereact/ripple';
 import { Geolocation } from '@capacitor/geolocation';
 import './styles.css'
-import ReportingService from "../../../../httpService/reportingService";
+import ReportingService from "../../../../services/httpService/reportingService";
 import {Dialog} from "primereact/dialog";
 
 const PanicButton = () => {
