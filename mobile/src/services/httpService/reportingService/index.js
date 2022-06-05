@@ -10,7 +10,7 @@ class ReportingService {
     }
 
     sendIssueReport = async (text,image,location) => {
-        const result = await http.post(`/api/user/sendLocation`, {
+        const result = await http.post(`/api/user/sendReport`, {
             text,
             image,
             location

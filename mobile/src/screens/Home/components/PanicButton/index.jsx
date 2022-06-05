@@ -24,10 +24,10 @@ const PanicButton = () => {
             .then(res => {
                 console.log([res.coords.latitude,res.coords.longitude])
                 setConfirmationDialog(true)
-                // ReportingService.sendLocation([res.coords.latitude,res.coords.longitude])
-                //     .then(() => {
-                //         setConfirmationDialog(true)
-                //     })
+                ReportingService.sendLocation([res.coords.latitude,res.coords.longitude])
+                    .then(() => {
+                        setConfirmationDialog(true)
+                    })
             })
     };
 

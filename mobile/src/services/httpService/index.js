@@ -6,7 +6,7 @@ export const BACKEND = process.env.REACT_APP_BACKEND_URL
 export const http = axios.create({
     timeout: 10000,
     baseURL: `${BACKEND}`,
-    withCredentials: true,
+    // withCredentials: true,
     headers: {
         'Accept': "application/json",
         "Content-Type": "application/json",

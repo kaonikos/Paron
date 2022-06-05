@@ -41,10 +41,10 @@ const ReportIssue = () => {
             .then(res => {
                 console.log(text,imageUrl,[res.coords.latitude,res.coords.longitude])
                 setConfirmationDialog(true)
-                // ReportingService.sendIssueReport(text,imageUrl,[res.coords.latitude,res.coords.longitude])
-                //     .then(() => {
-                //         setConfirmationDialog(true)
-                //     })
+                ReportingService.sendIssueReport(text,imageUrl,[res.coords.latitude,res.coords.longitude])
+                    .then(() => {
+                        setConfirmationDialog(true)
+                    })
             })
     };
 

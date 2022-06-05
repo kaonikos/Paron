@@ -46,3 +46,8 @@ svg {
 .p-tabview-title {
     color: white;
 }
+
+#instructions {
+    background-color: #4949495E;
+    color: white;
+}
