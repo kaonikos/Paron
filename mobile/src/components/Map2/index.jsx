@@ -4,9 +4,9 @@ import DirectionsService from '../../services/mapService/directions'
 import './styles.css'
 import {Geolocation} from "@capacitor/geolocation";
 import {useSelector} from "react-redux";
-// import MapboxDirections from '@mapbox/mapbox-gl-directions/src/directions.js';
 import * as MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
+import {CustomControlGroup} from './customGeolocation'
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_PUBLIC_ACCESS_TOKEN
 
@@ -37,6 +37,38 @@ const Map = () => {
         voice_instructions: true,
     })
 
+    class ToggleControl extends mapboxgl.GeolocateControl {
+        _onSuccess(position) {
+            console.log(map)
+            this.map.flyTo({
+                center: [position.coords.longitude, position.coords.latitude],
+                zoom: 17,
+                bearing: 0,
+                pitch: 0
+            });
+        }
+
+        onAdd(map, cs) {
+            this.map = map;
+            this.container = document.createElement('div');
+            this.container.className = `mapboxgl-ctrl`;
+            const button = this._createButton('monitor_button')
+            this.container.appendChild(button);
+            return this.container;
+        }
+
+        _createButton(className) {
+            const el = window.document.createElement('button')
+            el.className = className;
+            el.textContent = 'Use my location';
+            el.addEventListener('click', () => {
+                this.trigger();
+            });
+            this._setup = true;
+            return el;
+        }
+    }
+
     useEffect(() => {
             if (map.current) return; // initialize map only once
             map.current = new mapboxgl.Map({
@@ -55,10 +87,7 @@ const Map = () => {
                 setLat(map.current.getCenter().lat.toFixed(4));
                 setZoom(map.current.getZoom().toFixed(2));
             });
-            map.current.addControl(
-                directions,
-                'top-left'
-            );
+
             map.current.on('load', () => {
                 Geolocation.getCurrentPosition()
                     .then(res => {
@@ -67,6 +96,42 @@ const Map = () => {
                         directions.setDestination([23.776351,37.992380])
                     })
             });
+
+            Geolocation.getCurrentPosition()
+                .then(res => {
+                    setLocation([res.coords.longitude, res.coords.latitude])
+                })
+
+            // map.current.addControl(
+            //     new mapboxgl.GeolocateControl({
+            //         positionOptions: {
+            //             enableHighAccuracy: true
+            //         },
+            //         // When active the map will receive updates to the device's location as it changes.
+            //         trackUserLocation: true,
+            //         // Draw an arrow next to the location dot to indicate which direction the device is heading.
+            //         showUserHeading: true
+            //     })
+            // );
+            const toggleControl = new ToggleControl({
+                // positionOptions: {
+                //     enableHighAccuracy: true
+                // },
+                // // When active the map will receive updates to the device's location as it changes.
+                // trackUserLocation: true,
+                // // Draw an arrow next to the location dot to indicate which direction the device is heading.
+                // showUserHeading: true
+            })
+            map.current.addControl(toggleControl, 'top-right')
+            toggleControl.on('geolocate', () => {
+                console.log(map)
+                toggleControl._onSuccess(location,map.current)
+            });
+
+            map.current.addControl(
+                directions,
+                'top-left',
+            );
         }, [map]
     );
 
@@ -74,19 +139,34 @@ const Map = () => {
         () => {
             if (!map.current) return; // wait for map to initialize
             const element = document.getElementsByClassName("mapbox-directions-instructions");
-            console.log(element)
             if (element.length) {
                 element[0].hidden = toggleDirections
             }
         }, [toggleDirections]
     )
 
+    const defaultDirections = () => {
+        Geolocation.getCurrentPosition()
+            .then(res => {
+                setLocation([res.coords.longitude, res.coords.latitude])
+                directions.setOrigin([res.coords.longitude, res.coords.latitude])
+                directions.setDestination([23.776351,37.992380])
+                // map.current.addControl(
+                //     directions,
+                //     'top-left'
+                // );
+            })
+    }
+
     return (
         <div className="map">
-            <div className="sidebar" onClick={() => setToggleDirections(!toggleDirections)}>
-                <p>Directions</p>
+            <div className="toggle-directions" id="mode" onClick={() => setToggleDirections(!toggleDirections)}>
+                <p id="mode">Toggle Directions</p>
             </div>
             <div ref={mapContainer} className="map-container" />
+            {/*<div className="default-trip" id="mode" onClick={defaultDirections}>*/}
+            {/*    <p id="mode">Default Trip</p>*/}
+            {/*</div>*/}
         </div>
     );
 

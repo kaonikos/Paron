@@ -12,33 +12,36 @@
 }
 
 
-.sidebar {
-    background-color: rgba(35, 55, 75, 0.9);
+.map .toggle-directions {
     color: #fff;
-    padding: 6px 12px;
+    padding: 12px;
+    width: 30%;
     font-family: monospace;
     z-index: 10000;
     position: absolute;
     bottom: 40px;
     left: 0;
     margin: 12px;
+    text-align: center;
     border-radius: 4px;
 }
-
-#instructions {
-    display: flex;
-    flex-direction: column;
+.map .toggle-directions p {
+    margin: 0;
+}
+.map .default-trip {
+    color: #fff;
+    padding: 12px;
+    width: 30%;
+    font-family: monospace;
+    z-index: 10000;
     position: absolute;
-    width: 50%;
-    height: 50%;
-    top: auto;
-    left: auto;
-    padding:0 20px;
-    overflow-y: scroll;
-    font-family: Montserrat;
-    z-index: 1001;
-
-    box-shadow: 0 8px 32px 0 rgba(143, 143, 143, 0.37);
-    backdrop-filter: blur( 1.5px );
+    bottom: 40px;
+    right: 0;
+    margin: 12px;
     border-radius: 4px;
+    text-align: center;
+}
+
+.map .default-trip p {
+    margin: 0;
 }

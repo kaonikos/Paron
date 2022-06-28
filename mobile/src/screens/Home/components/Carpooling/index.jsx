@@ -24,7 +24,6 @@ const Carpooling = () => {
                 </div>
             </div>
             <Map/>
-            {/*<a href={`https://www.waze.com/ul?ll=${37.992380}%2C${23.776351}&navigate=yes&zoom=17`}>Waze</a>*/}
         </div>
     )
 }
