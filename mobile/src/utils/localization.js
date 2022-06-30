@@ -11,7 +11,7 @@ export const L = {
         HomeOptionsReportTitle: 'Report Issue',
         HomeOptionsReportDescription: 'Take a photo and/or write a description of an issue you encountered',
         HomeOptionsCarpoolingTitle: 'Carpooling',
-        HomeOptionsCarpoolingDescription: 'Coming Soon',
+        HomeOptionsCarpoolingDescription: 'Select a role and participate in the carpooling service',
 
         PanicButtonTitle: 'Panic button',
         PanicButtonSuccessMessage: 'Your location was sent successfully!',

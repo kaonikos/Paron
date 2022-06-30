@@ -4,6 +4,10 @@ import {Actions} from "../../reducer/actions";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft,faUser} from "@fortawesome/free-solid-svg-icons";
 import { Dropdown } from 'primereact/dropdown';
+import { InputText } from 'primereact/inputtext';
+import { Dialog } from 'primereact/dialog';
+import { FileUpload } from 'primereact/fileupload';
+import { Button } from 'primereact/button';
 import { InputSwitch } from 'primereact/inputswitch';
 import { TabView, TabPanel } from 'primereact/tabview';
 import {L} from '../../utils/localization'
@@ -22,6 +26,9 @@ const Profile = () => {
     const setDisplayedScreen = (payload) => dispatch({ type: Actions.SetDisplayedScreen, payload });
 
     const [languageValue, setLanguageValue] = useState('English')
+    const [registerDialog, setRegisterDialog] = useState(false)
+    const [carModel, setCarModel] = useState('')
+    const [carPlate, setCarPlate] = useState('')
 
     useEffect(
         () => {
@@ -29,6 +36,11 @@ const Profile = () => {
         }, [languageValue]
     )
 
+    const renderFooter = () => {
+        return (
+            <Button label="Submit" onClick={() => setRegisterDialog(false)} />
+        )
+    }
 
     return (
         <div className='profile'>
@@ -41,6 +53,21 @@ const Profile = () => {
                 <FontAwesomeIcon id='user-icon' icon={faUser}/>
                 <TabView>
                     <TabPanel header={language.ProfileTabData}>
+                        <div className="user-data">
+                            <p id="mode">Click the button below to register as a driver</p>
+                            <Button label="Register" onClick={() => setRegisterDialog(true)} />
+                        </div>
+                        <Dialog header="Register Form" visible={registerDialog} style={{ width: '50vw' }} footer={renderFooter()} onHide={() => setRegisterDialog(false)}>
+                            <div className="register-form">
+                                <p>Please enter the model of you car</p>
+                                <InputText value={carModel} onChange={(e) => setCarModel(e.target.value)} placeholder="Car Model"/>
+                                <p>Please enter your Licence Plate</p>
+                                <InputText value={carPlate} onChange={(e) => setCarPlate(e.target.value)} placeholder="Licence Plate"/>
+                                <p>Please upload up to 3 clear pictures of your car</p>
+                                <FileUpload name="demo[]" url="https://primefaces.org/primereact/showcase/upload.php" multiple accept="image/*" maxFileSize={1000000}
+                                            emptyTemplate={<p className="m-0">Drag and drop files to here to upload.</p>} />
+                            </div>
+                        </Dialog>
                     </TabPanel>
                     <TabPanel header={language.ProfileTabStats}>
                     </TabPanel>

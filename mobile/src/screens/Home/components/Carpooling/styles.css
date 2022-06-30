@@ -6,3 +6,133 @@
     align-items: center;
     justify-content: center;
 }
+
+.home .carpooling .role-selector {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .carpooling .role-selector .passenger {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+
+    position: relative;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.home .carpooling .role-selector .passenger:focus {
+    height: 90%;
+}
+.home .carpooling .role-selector .driver {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.home .carpooling .role-selector .driver:focus {
+    height: 90%;
+}
+.home .carpooling .role-selector svg {
+    font-size: 32px;
+}
+
+.home .carpooling .role-selector .unfocused-content {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    background: rgba(192, 192, 192, 0.37);
+    backdrop-filter: blur( 1.5px );
+    border-radius: 4px;
+
+    position: absolute;
+    top: auto;
+    left: auto;
+
+    opacity: 1;
+    z-index: 0;
+
+    -webkit-transition: opacity 0.3s ease, z-index 0s;
+    -moz-transition: opacity 0.3s ease, z-index 0s;
+    -ms-transition: opacity 0.3s ease, z-index 0s;
+    -o-transition: opacity 0.3s ease, z-index 0s;
+    transition: opacity 0.3s ease, z-index 0s;
+}
+
+.home .carpooling .role-selector .unfocused-content p {
+    font-size: 24px;
+    text-align: center;
+}
+
+.home .carpooling .role-selector .focused-content {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    position: absolute;
+    top: auto;
+    left: auto;
+
+    background: rgba(192, 192, 192, 0.37);
+    backdrop-filter: blur( 1.5px );
+    border-radius: 4px;
+
+    opacity: 0;
+    z-index: -1;
+
+    -webkit-transition: opacity 0.3s ease, z-index 0s;
+    -moz-transition: opacity 0.3s ease, z-index 0s;
+    -ms-transition: opacity 0.3s ease, z-index 0s;
+    -o-transition: opacity 0.3s ease, z-index 0s;
+    transition: opacity 0.3s ease, z-index 0s;
+}
+
+.home .carpooling .role-selector .passenger:focus .unfocused-content {
+    opacity: 0;
+    z-index: -1;
+}
+.home .carpooling .role-selector .driver:focus .unfocused-content {
+    opacity: 0;
+    z-index: -1;
+}
+
+.home .carpooling .role-selector .passenger:focus .focused-content {
+    opacity: 1;
+    z-index: 0;
+}
+.home .carpooling .role-selector .driver:focus .focused-content {
+    opacity: 1;
+    z-index: 0;
+}

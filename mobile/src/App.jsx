@@ -4,6 +4,8 @@ import SplashScreen from "./screens/SplashScreen";
 import Home from './screens/Home'
 import Login from './screens/Login'
 import Profile from './screens/Profile'
+import PassengerMap from './screens/PassengerMap'
+import DriverMap from './screens/DriverMap'
 import ParticlesComponent from "./components/ParticlesComponent";
 import {L} from './utils/localization'
 
@@ -83,6 +85,8 @@ const App = () => {
             case 'home': return <Home/>
             case 'login': return <Login/>
             case 'profile': return <Profile/>
+            case 'passenger-map': return <PassengerMap/>
+            case 'driver-map': return <DriverMap/>
             default: return null
         }
     }

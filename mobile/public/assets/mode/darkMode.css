@@ -51,3 +51,16 @@ svg {
     background-color: #4949495E;
     color: white;
 }
+
+.map .default-trip {
+    box-shadow: 0 0 0 0 rgb(255, 255, 255) !important;
+    border: 1px solid white !important;
+}
+
+.map .toggle-directions{
+    border: 1px solid white !important;
+}
+
+.home .carpooling .role-selector .passenger {
+    border-bottom: 1px solid white !important;
+}
